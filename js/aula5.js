@@ -1,7 +1,7 @@
 let cpfs = ["", "", "", "", ""];
 
 function cpfEValido(cpf) {
-  if (cpfs.length === 11) {
+  if (cpf.length === 11) {
     return true;
   } else {
     return false;
@@ -25,16 +25,16 @@ function aplicarMascaraCPF(cpf) {
     "-" +
     digitos[9] +
     digitos[10];
-
   return mascaraCPF;
 }
 
 for (let index = 0; index < cpfs.length; index++) {
-  let cpfDigitado = prompt("Digite cpf " + (index + 1));
+  let cpfDigitado = prompt("Digite cpf  " + (index + 1));
   if (cpfEValido(cpfDigitado)) {
     let cpfComMascara = aplicarMascaraCPF(cpfDigitado);
-    cpfs.push(cpfComMascara);
+    cpfs[index] = cpfComMascara;
+    alert("Seu CPF " + cpfComMascara + " é válido.");
   } else {
-    alert("cpf inválido");
+    alert("CPF inválido");
   }
 }
